@@ -1,0 +1,212 @@
+body { 
+  margin: 0; 
+  font-family: 'Segoe UI', Arial, sans-serif; 
+  background-color: #0b0f19; 
+  color: #f1f5f9;
+} 
+ 
+header {
+  background: linear-gradient(
+    135deg,
+    #d946ef,   
+    #8b5cf6,   
+    #f59e0b,  
+    #06b6d4   
+  );
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+ 
+main { 
+  width: 90%; 
+  max-width: 850px; 
+  margin: 40px auto; 
+} 
+ 
+.panel { 
+  background: #1e293b; 
+  padding: 30px; 
+  border-radius: 16px; 
+  margin-bottom: 30px; 
+  border: 1px solid #334155;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
+} 
+ 
+h2 { 
+  color: #f472b6;  
+  text-align: center; 
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+} 
+
+
+
+ 
+form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 16px; 
+} 
+ 
+input, select { 
+  padding: 14px; 
+  border-radius: 8px; 
+  font-size: 16px; 
+  background-color: #0f172a;
+  border: 1px solid #475569;
+  color: #f8fafc;
+  transition: all 0.3s ease;
+} 
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #06b6d4; 
+  box-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+}
+
+
+input::placeholder {
+  color: #64748b;
+}
+ 
+button { 
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  
+  background: linear-gradient(135deg, #ec4899, #8b5cf6); 
+  color: white; 
+  border: none; 
+  cursor: pointer; 
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
+} 
+ 
+button:hover { 
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(236, 72, 153, 0.3);
+  filter: brightness(1.1);
+} 
+ 
+#mensaje { 
+  text-align: center; 
+  font-weight: bold; 
+  margin-top: 15px;
+} 
+ 
+.ok { color: #4ade80; } 
+.error { color: #f87171; } 
+ 
+.acciones { 
+  display: flex; 
+  justify-content: center; 
+  gap: 12px; 
+  flex-wrap: wrap; 
+  margin-bottom: 20px; 
+} 
+
+
+.acciones button {
+  background: #334155;
+  color: #cbd5e1;
+  border: 1px solid #475569;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+.acciones button:hover {
+  background: #475569;
+  color: white;
+  border-color: #64748b;
+  transform: none;
+}
+
+
+#btnCargar { color: #22d3ee; border-color: rgba(34, 211, 238, 0.4); }
+#btnCasados { color: #c084fc; border-color: rgba(192, 132, 252, 0.4); }
+#btnSolteros { color: #f472b6; border-color: rgba(244, 114, 182, 0.4); }
+ 
+.sin-resultados { 
+  width: 100%; 
+  text-align: center; 
+  font-weight: bold; 
+  color: #94a3b8; 
+} 
+ 
+.galeria { 
+  display: flex; 
+  gap: 20px; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  margin-top: 25px; 
+} 
+ 
+
+.tarjeta { 
+  width: 220px; 
+  background: #0f172a;
+  border-radius: 12px; 
+  padding: 20px; 
+  text-align: center; 
+  border: 1px solid #1e293b;
+  border-top: 4px solid #8b5cf6; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+  transition: transform 0.3s ease;
+} 
+
+.tarjeta:hover {
+  transform: scale(1.03);
+}
+ 
+.casado { 
+  color: #4ade80; 
+  font-weight: bold; 
+} 
+
+.soltero { 
+  color: #f87171; 
+  font-weight: bold; 
+} 
+
+.eliminar { 
+  margin-top: 15px; 
+  background: #ef4444; 
+  font-size: 14px;
+  padding: 8px;
+  box-shadow: none;
+} 
+
+.eliminar:hover {
+  background: #dc2626;
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) { 
+  .acciones { 
+    flex-direction: column; 
+    width: 100%;
+  } 
+  .acciones button {
+    width: 100%;
+  }
+  .tarjeta { 
+    width: 100%; 
+    box-sizing: border-box;
+  } 
+}

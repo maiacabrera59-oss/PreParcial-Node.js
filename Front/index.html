@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Sistema de Cantantes</title> 
+  <link rel="stylesheet" href="./estilo.css"> 
+</head> 
+<body> 
+<header> 
+  <h1>Sistema de Cantantes</h1> 
+</header> 
+ 
+<main> 
+  <section class="panel"> 
+    <h2>Registrar cantante</h2> 
+    <form id="formCantante"> 
+      <input type="text" id="nombre" placeholder="Nombre del cantante"> 
+      
+      <select id="genero"> 
+        <option value="genero">Seleccione un género</option> 
+        <option value="Pop">Pop</option> 
+        <option value="Folclore">Folclore</option> 
+        <option value="Reggaeton">Reggaeton</option> 
+        <option value="Trap">Trap</option> 
+        <option value="Rock">Rock</option> 
+        <option value="Jazz">Jazz</option> 
+        <option value="Otro">Otro</option> 
+      </select> 
+      
+      <input type="number" id="edad" placeholder="Edad"> 
+    
+      <select id="casado" name="casado">
+        <option value="" disabled selected hidden>Seleccione estado civil</option>
+        <option value="1">Casado</option>
+        <option value="0">Soltero</option>
+      </select>
+
+      <button type="submit">Guardar cantante</button> 
+    </form> 
+    <p id="mensaje"></p> 
+  </section> 
+ 
+  <section class="panel"> 
+    <h2>Listado de cantantes</h2> 
+ 
+    <div class="acciones"> 
+      <button id="btnCargar">Recargar cantantes</button> 
+      <button id="btnTodas">Mostrar todos</button> 
+      <button id="btnCasados">Mostrar casados</button> 
+      <button id="btnSolteros">Mostrar solteros</button> 
+    </div> 
+ 
+    <div id="listadoCantantes" class="galeria"></div> 
+  </section>
+</main> 
+ 
+<script src="./app.js"></script> 
+</body> 
+</html>
