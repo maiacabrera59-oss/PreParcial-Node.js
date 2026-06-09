@@ -14,10 +14,10 @@ const btnTodas = document.querySelector("#btnTodas");
 const btnCasadas = document.querySelector("#btnCasados");
 const btnSolteras = document.querySelector("#btnSolteros");
 
-// Guarda en memoria los cantantes
+
 let cantantesActuales = [];
 
-// Cargar cantantes
+
 async function cargarCantantes() {
     try {
         const respuesta = await fetch(API_URL);
@@ -48,7 +48,7 @@ function mostrarCantantes(cantantes) {
     }
 
     cantantes.forEach(cantante => {
-        // En SQL Server, un BIT se recupera a veces como true/false o como 1/0
+
         const esCasado = cantante.casado === true || cantante.casado === 1 || cantante.casado === "true";
 
         const claseCasado = esCasado ? "casado" : "soltero";
@@ -65,7 +65,7 @@ function mostrarCantantes(cantantes) {
 
                 <p>
                     <strong>Edad:</strong>
-                    ${cantante.edad}
+                    ${cantante.edad} años
                 </p>
 
                 <p class="${claseCasado}">
@@ -82,14 +82,14 @@ function mostrarCantantes(cantantes) {
     });
 }
 
-// Mostrar todos
+
 function mostrarTodas() {
     mostrarCantantes(cantantesActuales);
     mensaje.textContent = "Mostrando todos los cantantes.";
     mensaje.className = "ok";
 }
 
-// Mostrar casados
+
 function mostrarCasadas() {
     const cantantesCasados = cantantesActuales.filter(cantante => 
         cantante.casado === true || cantante.cantante === 1 || cantante.casado === "true"
@@ -146,7 +146,7 @@ async function guardarCantante(evento) {
             body: JSON.stringify(nuevoCantante)
         });
 
-        // Intentamos parsear la respuesta del servidor para ver el mensaje real
+       
         const data = await respuesta.json();
 
         if (!respuesta.ok) {
@@ -157,7 +157,7 @@ async function guardarCantante(evento) {
         mensaje.className = "ok";
 
         formulario.reset();
-        cargarCantantes(); // Recarga automáticamente la lista actualizada de la BD
+        cargarCantantes(); 
 
     } catch (error) {
         mensaje.textContent = `Error al guardar: ${error.message}`;
@@ -166,7 +166,7 @@ async function guardarCantante(evento) {
     }
 }
 
-// Eliminar cantante
+
 async function eliminarCantante(id) {
     try {
         const respuesta = await fetch(`${API_URL}/${id}`, {
@@ -191,12 +191,12 @@ async function eliminarCantante(id) {
     }
 }
 
-// Eventos
+
 formulario.addEventListener("submit", guardarCantante);
 btnCargar.addEventListener("click", cargarCantantes);
 btnTodas.addEventListener("click", mostrarTodas);
 btnCasadas.addEventListener("click", mostrarCasadas);
 btnSolteras.addEventListener("click", mostrarSolteras);
 
-// Carga inicial al abrir la página
+
 cargarCantantes();
